@@ -3,8 +3,8 @@
 Car bids is a webpage that allows users to buy and sell Car enthusiast vehicles, this will only include vehicles newer than 2010 or special cars including sports and unique vehicles. 
 
 
+# User Story
 
-User Story 
 As a User, I want to view car auctions that are ending soon on the home page so that i can explore auctions that are ending soon. 
 
 As a User, I want to press on a car that interests me, and see the details of the car so that i can see if i want to place a bid. 
