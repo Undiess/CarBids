@@ -1,13 +1,26 @@
-import React, {useEffect, useState } from "react"
+import React, {useEffect, useState, useContext } from "react"
 import "./stylesheet.css"
 import moment, {duration} from 'moment'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { Link } from 'react-router-dom';
+import carContext from "../../utils/carContext";
 
 function Carcontainer(props){
     
-    
+    const  carid  = useContext(carContext)
     
 
-    const [time, setTime] = useState([]);
+    const [time, setTime] = useState(
+        {
+            "days":0,
+            "hours":0,
+            "mins":0,
+            "seconds":0
+        
+        }
+    );
+
+  
 
     const setCountdown=()=>{
         const futureDate = moment(props.props.ending_time)
@@ -33,7 +46,9 @@ function Carcontainer(props){
         
     }
     
-    
+        const  numberWithCommas= (x) => {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
 
 
       useEffect(() => {
@@ -47,19 +62,24 @@ function Carcontainer(props){
 
      return( 
         
-             
+      
          <div class="col-3 carcontainer">
-             <img class="carimage"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/2004_Nissan_350Z_3.5_Front.jpg/280px-2004_Nissan_350Z_3.5_Front.jpg"/>
-            <h5>{props.props.title}</h5>
-            <p>{props.props.description}</p>
-            <h1>{time.days}</h1>
+             <img class="carimage"src={props.props.imgURL}/>
+            <h4>{props.props.title}</h4>
+            <p className="descriptiontext">{props.props.description}</p>
+            <br></br>
+             
+            <Link to="/cardetails"><a className="viewmorebtn"><button onClick={()=>{carid(props.props)}} type="button" class="detailsbtn btn btn-secondary">Details</button></a></Link>
+             
+             <p className="locationtext">{props.props.location}</p>
+            <div className="countdownbox"><FontAwesomeIcon icon="dollar-sign" /> {numberWithCommas(props.props.highest_bid)}<FontAwesomeIcon className="dollarsign"icon="clock"/> {time.days}d {time.hours}h {time.mins}m {time.seconds}s </div>
             
             
          </div>
                  
-             
+      
          
-         
+                 
      )
 } 
 export default Carcontainer
