@@ -1,3 +1,4 @@
 module.exports = {
-    Cars: require("./cars")
+    Cars: require("./cars"),
+    User: require("./User")
   };

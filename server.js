@@ -4,6 +4,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const apiRoutes = require("./routes/api");
+const passport = require("passport");
+const users = require("./routes/users");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,6 +25,13 @@ mongoose.connect(
     process.env.MONGODB_URI || "mongodb+srv://carbids:1234@cluster0.nduav.mongodb.net/Carbids",
     { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
   );
+
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+// Routes
+app.use("/api/users", users);
 
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));

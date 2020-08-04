@@ -6,6 +6,7 @@ import Auction from "./components/pages/auctions/Auctions";
 import"./components/fontawesome/fontawesome";
 import CarDetails from "./components/pages/cardetails/cardetails"
 import carContext from "./components/utils/carContext"
+import SignIn from "./components/pages/signIn/signin"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <carContext.Provider value={car}>
             <Route exact path="/cardetails" component={CarDetails}/>
            </carContext.Provider>
+           <Route exact path="/signin" component={SignIn}/>
         </div>
       </carContext.Provider>
     </Router>

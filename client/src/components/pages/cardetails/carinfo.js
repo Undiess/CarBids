@@ -1,15 +1,22 @@
 import React from 'react';
-
+import "./stylesheet.css"
 function Carinfo(props){ 
-    console.log(props.props.props.title)
+   
     
     return(
         <div>
-            <h1>{props.props.props.title}</h1>
-            <h1>{props.props.props.highest_bid}</h1>
-            <h1>{props.props.props.ending_time}</h1>
-            <h1>{props.props.props.engine}</h1>
-            <h1>{props.props.props.transmission}</h1>
+            <div className="contentcontainer"> 
+                    <img className="detailimg"src={props.props.props.imgURL}/> 
+                    <h1>{props.props.props.title}</h1>
+                    <h4>Highest Bid: {props.props.props.highest_bid}</h4>
+                    <p>{props.props.props.overview}</p>
+                   
+                   
+                    <input type="number" id="quantity" placeholder={props.props.props.highest_bid} min={props.props.props.highest_bid} ></input>
+                    <button type="button" class="signinbtn placebidbtn btn btn-secondary">PlaceBid</button>
+
+            </div>
+           
         </div>
     )
 }

@@ -1,0 +1,16 @@
+.contentcontainer{
+   text-align: center;  
+   margin-top: 3%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detailimg{ 
+    width: 100%;
+    border-radius: 10px;
+}
+
+.placebidbtn{
+    margin-left: 5px;
+}
