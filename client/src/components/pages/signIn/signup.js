@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import "./stylesheet.css"
 import { Link } from "react-router-dom";
-import Axios from 'axios';
-
+import API from "../../utils/API"
 
 
 function SignUp(){
@@ -10,7 +9,7 @@ function SignUp(){
     const [state,setState]=useState({
         name:"",
         email:"",
-        password1:"",
+        password:"",
         password2:"",
       });
 
@@ -24,10 +23,12 @@ function SignUp(){
     const userData = {
         name: state.name,
         email: state.email,
-        password1: state.password1,
+        password: state.password,
         password2:state.password2
     };
-    Axios.postRegister(userData)
+    API.postRegister(userData).then(res =>{
+        console.log(res)
+    })
     
      }
 
@@ -46,7 +47,7 @@ function SignUp(){
 
             <input onChange={onChange} type="text" id="name" class="form-control" placeholder="Full name" required="" autofocus=""/>
             <input onChange={onChange} type="email" id="email" class="form-control" placeholder="Email address" required autofocus=""/>
-            <input onChange={onChange} type="password" id="password1" class="form-control" placeholder="Password" required autofocus=""/>
+            <input onChange={onChange} type="password" id="password" class="form-control" placeholder="Password" required autofocus=""/>
             <input onChange={onChange} type="password" id="password2" class="form-control" placeholder="Repeat Password" required autofocus=""/>
 
             <button onClick={onSubmit} class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
