@@ -20,7 +20,7 @@ app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
   
-
+app.use("/api/users", users);
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb+srv://carbids:1234@cluster0.nduav.mongodb.net/Carbids",
     { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
@@ -31,7 +31,7 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 // Routes
-app.use("/api/users", users);
+
 
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
