@@ -30,41 +30,39 @@ function SignUp(){
     });
       
   const onSubmit = e => {
-    e.preventDefault();
+     e.preventDefault();
 
-    setNameError({});
-    setEmailError({});
-    setPasswordError({})
+        setNameError({});
+        setEmailError({});
+        setPasswordError({})
 
-    const userData = {
-        name: state.name,
-        email: state.email,
-        password: state.password,
-        password2:state.password2
-    };
-    API.postRegister(userData).then(res =>{
-       
-     
-        if (res.data.name){
-            
-            setNameError({nameError:res.data.name})
+        const userData = {
+            name: state.name,
+            email: state.email,
+            password: state.password,
+            password2:state.password2
         };
-        if (res.data.email){
-            setEmailError({emailError:res.data.email})
-            
-        };
-        if (res.data.password){
-            setPasswordError({passwordError:res.data.password})
-        }
 
-        if (res.data.password2){
-            setPasswordError({passwordError:res.data.password2})
-        }
-        
-    
-    })
-    
-     }
+        API.postRegister(userData).then(res =>{
+            if (res.status==203){
+                if (res.data.name){                  
+                    setNameError({nameError:res.data.name})
+                };
+                if (res.data.email){
+                    setEmailError({emailError:res.data.email})                  
+                };
+                if (res.data.password){
+                    setPasswordError({passwordError:res.data.password})
+                }
+                if (res.data.password2){
+                    setPasswordError({passwordError:res.data.password2})
+                }  
+            }
+
+            
+
+        })
+    }
 
 
     return(

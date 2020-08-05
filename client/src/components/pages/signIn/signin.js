@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState, useContext } from "react"
 import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
 import "./stylesheet.css"
 import API from "../../utils/API"
 import { Link } from "react-router-dom";
+import loggedContext from "../../utils/loggedContext"
 
 function SignIn(){ 
   
@@ -13,23 +14,61 @@ function SignIn(){
  
   });
 
+  const [passwordError,setPasswordError]=useState({
+    passwordError:""
+});
+
+const [emailError,setEmailError]=useState({
+    emailError:""
+});
+
   const onChange = e => {
     setState({...state,[e.target.id]: e.target.value });
   };
 
+  const loggedin  = useContext(loggedContext)
+
   const onSubmit = e => {
     e.preventDefault();
+
+    setEmailError({});
+    setPasswordError({});
+
     const userData = {
       email: state.email,
       password: state.password
     };
     console.log(userData)
     API.postSignIn(userData)
+    .then(res=>{
+      console.log(res)
+    if(res.status==203){
+      console.log(res)
+      if (res.data.emailnotfound){
+          setEmailError({emailError:res.data.emailnotfound})
+          
+      };
+      if (res.data.passwordincorrect){
+        setPasswordError({passwordError:res.data.passwordincorrect})
+      }
+    }
+    
+    else{
+      localStorage.setItem('login',JSON.stringify({
+        login:true,
+        token: res.data.token
+      }))
+      loggedin(true)
+    }
+      
+    
+      
+   })
   }
 
   return(
-    
-    <div id="logreg-forms ">
+ 
+      <div id="logreg-forms ">
       <div class="signin-div">
             <form class="form-signin">
               <h1 class="h3 mb-3 font-weight-normal"> Sign in</h1>
@@ -39,7 +78,9 @@ function SignIn(){
               </div>
               <p > OR  </p>
               <input onChange={onChange} value={state.email} id="email" class="form-control" placeholder="Email address" required="" autofocus=""/>
+              <p class="warninglabel"> {emailError.emailError}</p>
               <input onChange={onChange} value={state.password} type="password" id="password" class="form-control" placeholder="Password" required=""/>
+              <p class="warninglabel"> {passwordError.passwordError}</p>
               
               <button onClick={onSubmit}class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
               <a href="#" id="forgot_pswd">Forgot password?</a>
@@ -53,6 +94,8 @@ function SignIn(){
         
             
     </div>
+   
+    
   );
 }
 

@@ -6,6 +6,7 @@ import Auction from "./components/pages/auctions/Auctions";
 import"./components/fontawesome/fontawesome";
 import CarDetails from "./components/pages/cardetails/cardetails"
 import carContext from "./components/utils/carContext"
+import loggedContext from "./components/utils/loggedContext"
 import SignIn from "./components/pages/signIn/signin"
 import SignUp from './components/pages/signIn/signup';
 
@@ -14,6 +15,14 @@ function App() {
   const [car, setid] = useState({
     
   });
+
+  const [loggedin,setLogin]= useState({
+    login:""
+  })
+  function loggingin(value){
+    setLogin({login:value}).then()
+    console.log(loggedin)
+  }
 
   function carid(props){
     car.props=props
@@ -24,6 +33,8 @@ function App() {
   
   return (
     <Router>
+      <loggedContext.Provider value={loggingin}>
+      <loggedContext.Provider value={loggedin}>
       <carContext.Provider value={carid}> 
         <div className="App">
           <Navbar/>
@@ -31,10 +42,16 @@ function App() {
           <carContext.Provider value={car}>
             <Route exact path="/cardetails" component={CarDetails}/>
            </carContext.Provider>
-           <Route exact path="/signin" component={SignIn}/>
-           <Route exact path="/signup" component={SignUp}/>
+           
+            <Route exact path="/signin" component={SignIn}/>
+            <Route exact path="/signup" component={SignUp}/>\
         </div>
-      </carContext.Provider>
+        </carContext.Provider>
+        </loggedContext.Provider>
+      </loggedContext.Provider>
+           
+   
+      
     </Router>
     
   );
