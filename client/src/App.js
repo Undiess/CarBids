@@ -16,13 +16,8 @@ function App() {
     
   });
 
-  const [loggedin,setLogin]= useState({
-    login:""
-  })
-  function loggingin(value){
-    setLogin({login:value}).then()
-    console.log(loggedin)
-  }
+  const [loggedin,setLogin]= useState({})
+  
 
   function carid(props){
     car.props=props
@@ -33,8 +28,8 @@ function App() {
   
   return (
     <Router>
-      <loggedContext.Provider value={loggingin}>
-      <loggedContext.Provider value={loggedin}>
+    
+      <loggedContext.Provider value={[loggedin,setLogin]}>
       <carContext.Provider value={carid}> 
         <div className="App">
           <Navbar/>
@@ -48,7 +43,7 @@ function App() {
         </div>
         </carContext.Provider>
         </loggedContext.Provider>
-      </loggedContext.Provider>
+     
            
    
       

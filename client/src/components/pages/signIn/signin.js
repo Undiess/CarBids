@@ -5,6 +5,8 @@ import "./stylesheet.css"
 import API from "../../utils/API"
 import { Link } from "react-router-dom";
 import loggedContext from "../../utils/loggedContext"
+import setAuthToken from "../../utils/setAuthToken";
+import jwt_decode from "jwt-decode";
 
 function SignIn(){ 
   
@@ -26,7 +28,7 @@ const [emailError,setEmailError]=useState({
     setState({...state,[e.target.id]: e.target.value });
   };
 
-  const loggedin  = useContext(loggedContext)
+  const [loggedin,setLogin] = useContext(loggedContext)
 
   const onSubmit = e => {
     e.preventDefault();
@@ -54,11 +56,18 @@ const [emailError,setEmailError]=useState({
     }
     
     else{
-      localStorage.setItem('login',JSON.stringify({
-        login:true,
-        token: res.data.token
-      }))
-      loggedin(true)
+      const { token } = res.data;
+      localStorage.setItem("jwtToken", token);
+      // Set token to Auth header
+       setAuthToken(token);
+      // Decode token to get user data
+        const decoded = jwt_decode(token);
+      // Set current user
+        setLogin({decoded})
+       
+        
+      
+     
     }
       
     
