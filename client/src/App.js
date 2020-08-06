@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from "./components/navbar/navbar.js"
 import { BrowserRouter as Router, Route} from 'react-router-dom'
@@ -9,9 +9,29 @@ import carContext from "./components/utils/carContext"
 import loggedContext from "./components/utils/loggedContext"
 import SignIn from "./components/pages/signIn/signin"
 import SignUp from './components/pages/signIn/signup';
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./components/utils/setAuthToken";
+
+
 
 function App() {
 
+  useEffect(()=>{
+    if(localStorage.jwtToken){
+      const token = localStorage.jwtToken;
+      setAuthToken(token);
+      const decoded = jwt_decode(token);
+      setLogin(decoded)
+    }
+    const currentTime = Date.now() / 1000; 
+    // if(loggedin.exp<currentTime){
+    //   setLogin({
+    //     login:false
+    //   })
+    // }
+    console.log(loggedin)
+  },[])
+  
   const [car, setid] = useState({
     
   });
@@ -19,11 +39,14 @@ function App() {
   const [loggedin,setLogin]= useState({
     login:"false"
   })
+
+
   
 
   function carid(props){
     car.props=props
     console.log(car)
+    console.log(loggedin)
   }
   
 

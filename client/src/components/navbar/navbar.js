@@ -35,7 +35,7 @@ function Navbar(){
              {loggedin.login === "false" ? (
             <Link to="/signin"><a className="sign-in-button"><button className="signinbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Sign In</button></a></Link>
             ) : (
-            <span className="wlcome">  Welcome <h5>{loggedin.decoded.name}</h5></span>
+            <span className="wlcome">   <h5>{loggedin.name}</h5></span>
             )}
           
             
