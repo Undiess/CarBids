@@ -1,9 +1,12 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from "react-router-dom";
 import logo from './logo.PNG';
 import './stylesheet.css'
+import loggedContext from "../utils/loggedContext"
 
 function Navbar(){ 
+
+    const [loggedin,setLogin] = useContext(loggedContext)
 
     return(
         <nav className="navbar navbartop navbar-expand-lg navbar-light bg-light">
@@ -28,8 +31,13 @@ function Navbar(){
             <input style ={{width:"400px"}} className="  form-control mr-sm-2" type="search" placeholder="Search " aria-label="Search"/>
             <button className="searchbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
           </form>
-         
-          <Link to="/signin"><a className="sign-in-button"><button className="signinbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Sign In</button></a></Link>
+        
+             {loggedin.login === "false" ? (
+            <Link to="/signin"><a className="sign-in-button"><button className="signinbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Sign In</button></a></Link>
+            ) : (
+            <span className="wlcome">  Welcome <h5>{loggedin.decoded.name}</h5></span>
+            )}
+          
             
         </div>
       </nav>

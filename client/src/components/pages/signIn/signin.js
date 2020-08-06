@@ -64,6 +64,7 @@ const [emailError,setEmailError]=useState({
         const decoded = jwt_decode(token);
       // Set current user
         setLogin({decoded})
+        console.log(loggedin)
        
         
       
