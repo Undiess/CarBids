@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import loggedContext from "../../utils/loggedContext"
 import setAuthToken from "../../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
+import { useHistory } from "react-router";
 
 function SignIn(){ 
   
@@ -30,6 +31,7 @@ const [emailError,setEmailError]=useState({
 
   const [loggedin,setLogin] = useContext(loggedContext)
 
+  const history = useHistory();
   const onSubmit = e => {
     e.preventDefault();
 
@@ -65,14 +67,8 @@ const [emailError,setEmailError]=useState({
       // Set current user
         setLogin({decoded})
         console.log(loggedin)
-       
-        
-      
-     
+        history.push({pathname:"/"})
     }
-      
-    
-      
    })
   }
 

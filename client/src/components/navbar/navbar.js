@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from './logo.PNG';
 import './stylesheet.css'
 import loggedContext from "../utils/loggedContext"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 function Navbar(){ 
 
@@ -28,15 +29,15 @@ function Navbar(){
             </li>
           </ul>
           <form className="searchbar form-inline my-2 my-lg-0">
-            <input style ={{width:"400px"}} className="  form-control mr-sm-2" type="search" placeholder="Search " aria-label="Search"/>
+            <input style ={{width:"400px"}} className=" searchbarinput form-control mr-sm-2" type="search" placeholder="Search " aria-label="Search"/>
             <button className="searchbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
           </form>
         
              {loggedin.login === "false" ? (
             <Link to="/signin"><a className="sign-in-button"><button className="signinbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Sign In</button></a></Link>
             ) : (
-            <span className="wlcome">   <h5>{loggedin.name}</h5></span>
-            )}
+            <div className="wlcome"> <a className="usericon"><FontAwesomeIcon icon="user" /></a> { loggedin.name}<a className="signouticon"><FontAwesomeIcon  icon="sign-out-alt" /></a> </div>
+            )} 
           
             
         </div>

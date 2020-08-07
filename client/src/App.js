@@ -15,7 +15,9 @@ import setAuthToken from "./components/utils/setAuthToken";
 
 
 function App() {
-
+  const [loggedin,setLogin]= useState({
+    login:"false"
+  })
   useEffect(()=>{
     if(localStorage.jwtToken){
       const token = localStorage.jwtToken;
@@ -36,9 +38,7 @@ function App() {
     
   });
 
-  const [loggedin,setLogin]= useState({
-    login:"false"
-  })
+
 
 
   
@@ -64,7 +64,7 @@ function App() {
            </carContext.Provider>
            
             <Route exact path="/signin" component={SignIn}/>
-            <Route exact path="/signup" component={SignUp}/>\
+            <Route exact path="/signup" component={SignUp}/>
         </div>
         </carContext.Provider>
         </loggedContext.Provider>

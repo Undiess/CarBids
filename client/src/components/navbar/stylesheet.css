@@ -37,6 +37,14 @@
    padding-bottom: 0;
 }
 .wlcome{ 
-    margin-left: 1%;
+    margin-left: 25%;
+    font-size: large;
+    width: 10%;
+}
+.searchbarinput{
+    margin-top: 2%; 
+}
 
+.signouticon{
+    padding-left: 10%;
 }
