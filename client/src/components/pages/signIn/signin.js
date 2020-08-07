@@ -67,7 +67,9 @@ const [emailError,setEmailError]=useState({
       // Set current user
         setLogin({decoded})
         console.log(loggedin)
+        
         history.push({pathname:"/"})
+        window.location.reload(false)
     }
    })
   }

@@ -4,10 +4,24 @@ import logo from './logo.PNG';
 import './stylesheet.css'
 import loggedContext from "../utils/loggedContext"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { useHistory } from "react-router";
 
 function Navbar(){ 
 
-    const [loggedin,setLogin] = useContext(loggedContext)
+    const [loggedin,setLogin] = useContext(loggedContext);
+
+    const history = useHistory();
+
+    const signOut=()=>{ 
+      setLogin({
+        login:false
+      });
+      history.push({pathname:"/"})
+      localStorage.removeItem('jwtToken')
+      window.location.reload(false)
+
+    };
 
     return(
         <nav className="navbar navbartop navbar-expand-lg navbar-light bg-light">
@@ -36,7 +50,7 @@ function Navbar(){
              {loggedin.login === "false" ? (
             <Link to="/signin"><a className="sign-in-button"><button className="signinbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Sign In</button></a></Link>
             ) : (
-            <div className="wlcome"> <a className="usericon"><FontAwesomeIcon icon="user" /></a> { loggedin.name}<a className="signouticon"><FontAwesomeIcon  icon="sign-out-alt" /></a> </div>
+            <div className="wlcome"> <a className="usericon"><FontAwesomeIcon icon="user" /></a> { loggedin.name}<button onClick={signOut} className="signouticon"><FontAwesomeIcon  icon="sign-out-alt" /></button> </div>
             )} 
           
             
