@@ -25,7 +25,7 @@ function Navbar(){
 
     return(
         <nav className="navbar navbartop navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand">
           <Link to="/"><img className = "navlogo" src={logo} alt="Car Bids"/></Link>
         </a>
         

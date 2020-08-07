@@ -1,6 +1,4 @@
 import React, {useEffect, useState, useContext } from "react"
-import ReactDOM from 'react-dom';
-import GoogleLogin from 'react-google-login';
 import "./stylesheet.css"
 import API from "../../utils/API"
 import { Link } from "react-router-dom";
@@ -46,7 +44,7 @@ const [emailError,setEmailError]=useState({
     API.postSignIn(userData)
     .then(res=>{
       console.log(res)
-    if(res.status==203){
+    if(res.status===203){
       console.log(res)
       if (res.data.emailnotfound){
           setEmailError({emailError:res.data.emailnotfound})

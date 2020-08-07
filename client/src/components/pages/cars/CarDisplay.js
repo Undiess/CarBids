@@ -22,8 +22,8 @@ function CarDisplay(){
 
      return( 
          <div >
-           <div class="displaycontainer ">
-                <div class="row">
+           <div className="displaycontainer ">
+                <div className="row">
                 {state.map(car =>(
                   <Carcontainer props={car}/>
                 ))}

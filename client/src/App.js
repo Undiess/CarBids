@@ -26,12 +26,11 @@ function App() {
       setLogin(decoded)
     }
     const currentTime = Date.now() / 1000; 
-    // if(loggedin.exp<currentTime){
-    //   setLogin({
-    //     login:false
-    //   })
-    // }
-    console.log(loggedin)
+    if(loggedin.exp<currentTime){
+      setLogin({
+        login:false
+      })
+    }
   },[])
   
   const [car, setid] = useState({
