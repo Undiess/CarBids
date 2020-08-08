@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./stylesheet.css"
 import { Link, Redirect } from "react-router-dom";
 import API from "../../utils/API"
+import { GoogleLogin } from 'react-google-login';
 
 
 function SignUp(){
@@ -64,15 +65,24 @@ function SignUp(){
         })
     }
 
+    const responseGoogle = (response) => {
+        console.log(response);
+      }
 
     return(
         <div>
+           
+            
             <form action="/signup/" class="form-signup">
+            <p class="newcarbids" >New to Carbids? Sign up Here!</p>
             <div class="social-login">
-                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
-            </div>
-            <div class="social-login">
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+            <GoogleLogin
+                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                buttonText="Sign up with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+            />
             </div>
             
             <p> OR</p>

@@ -6,6 +6,7 @@ import loggedContext from "../../utils/loggedContext"
 import setAuthToken from "../../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router";
+import { GoogleLogin } from 'react-google-login';
 
 function SignIn(){ 
   
@@ -71,6 +72,10 @@ const [emailError,setEmailError]=useState({
     }
    })
   }
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
+
 
   return(
  
@@ -80,7 +85,13 @@ const [emailError,setEmailError]=useState({
               <h1 class="h3 mb-3 font-weight-normal"> Sign in</h1>
               <div class="social-login">
 
-                  <button className="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+              <GoogleLogin
+                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
               </div>
               <p > OR  </p>
               <input onChange={onChange} value={state.email} id="email" class="form-control" placeholder="Email address" required="" autofocus=""/>
