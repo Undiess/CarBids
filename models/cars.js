@@ -35,7 +35,7 @@ const carSchema = new mongoose.Schema({
       required:true
     },
     kilometers:{
-      type:Double,
+      type:Number,
       required:true
     },
     engine:{
@@ -67,15 +67,15 @@ const carSchema = new mongoose.Schema({
       required:true
     },
     highest_bids:{
-      type:Double,
+      type:Number,
       required:true
     },
     num_bids:{
-      type:Double,
+      type:Number,
       required:true
     },
     highest_bidderid:{
-      type:StDoubleing,
+      type:Number,
       required:true
     },
 

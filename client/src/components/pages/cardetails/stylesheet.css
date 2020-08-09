@@ -1,11 +1,15 @@
 .contentcontainer{
    text-align: center;  
-   margin-top: 3%;
+ 
     width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
+.titledescription{
+padding-top: 1%;
+margin-left: 0px;
 
+}
 .detailimg{ 
     width: 100%;
     border-radius: 10px;
@@ -13,4 +17,51 @@
 
 .placebidbtn{
     margin-left: 5px;
+}
+
+
+.speedicon{
+    width: 40px;
+}
+.speedometer{
+    width: 30%;
+}
+.kmtext{
+    font-weight: 500;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.kmcontainer{
+    width: 40%;
+}
+
+.shifter{
+    width: 30%;
+}
+
+.car{
+    width: 30%;
+}
+
+.engineicon{
+    width: 18%;
+    padding-top: 7%;
+    padding-bottom: 5%;
+}
+
+.infobar{ 
+ 
+    border-bottom: grey solid 1px;
+    border-left: solid grey 1px;
+    border-right: grey solid 1px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+.transmissionicon {
+     width: 18%;
+     padding-top: 8%;
+     padding-bottom: 5%;
 }
