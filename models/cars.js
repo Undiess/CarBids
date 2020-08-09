@@ -1,6 +1,16 @@
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const bidsSchema = new Schema({
+    bidder_id:{
+      type:String,
+      required: true
+    },
+    bid_amount:{
+      type: Number,
+      required:true
+    }
+})
 const carSchema = new mongoose.Schema({
     title: {
       type: String,
@@ -78,10 +88,12 @@ const carSchema = new mongoose.Schema({
       type:Number,
       required:true
     },
-
+    bids:[bidsSchema]
   });
+
   
+
+ 
+
   const Cars = mongoose.model("Car", carSchema);
-  
   module.exports = Cars;
-  

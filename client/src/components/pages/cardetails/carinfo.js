@@ -5,57 +5,57 @@ import shifter from "./shifter.png"
 import body from "./body.png"
 import engine from "./engine.png"
 import drivetrain from "./drivetrain.png"
+import NumberFormat from 'react-number-format';
 
 
-function Carinfo(props){ 
+function props(props){ 
 
-    const  numberWithCommas= (x) => {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
+    
+    
+    console.log(props.props.kilometers)
     return(
         <div>
             
-            <h1 className="titledescription">{props.props.props.title}</h1>
+            <h1 className="titledescription">{props.props.title}</h1>
             <div className="contentcontainer"> 
-                    <img className="detailimg"src={props.props.props.imgURL}/> 
+                    <img className="detailimg"src={props.props.imgURL}/> 
                    
                     <div class="container infobar">
                         <div class="row">
                             <div class="col-sm">
                                 <img className="speedometer"src={speed} alt="speedometer"></img> 
-                                <p className="kmtext"> {numberWithCommas(props.props.props.kilometers)} km</p>
+                                <p className="kmtext"> <NumberFormat value={props.props.kilometers} displayType={'text'} thousandSeparator={true}  /> km</p>
                             </div>
 
                             <div class="col-sm">
                                 <img className="shifter"src={shifter} alt="speedometer"></img> 
-                                <p className="kmtext">{props.props.props.transmission}</p>
+                                <p className="kmtext">{props.props.transmission}</p>
                             </div>
 
                             <div class="col-sm">
                                 <img className="car"src={body} alt="speedometer"></img> 
-                                <p className="kmtext">{props.props.props.body_type}</p>
+                                <p className="kmtext">{props.props.body_type}</p>
                             </div>
 
                             <div class="col-sm">
                                 <img className="engineicon"src={engine} alt="speedometer"></img> 
-                                <p className="kmtext">{props.props.props.body_type}</p>
+                                <p className="kmtext">{props.props.body_type}</p>
                             </div>
 
                             <div class="col-sm">
                                 <img className="transmissionicon"src={drivetrain} alt="speedometer"></img> 
-                                <p className="kmtext">{props.props.props.drivetrain}</p>
+                                <p className="kmtext">{props.props.drivetrain}</p>
                             </div>
                         
                         </div>
                     </div>
 
                     
-                    <h4>Highest Bid: {props.props.props.highest_bid}</h4>
-                    <p>{props.props.props.overview}</p>
+                    <h4>Highest Bid: {props.props.highest_bid}</h4>
+                    <p>{props.props.overview}</p>
                    
                    
-                    <input type="number" id="quantity" placeholder={props.props.props.highest_bid} min={props.props.props.highest_bid} ></input>
+                    <input type="number" id="quantity" placeholder={props.props.highest_bid} min={props.props.highest_bid} ></input>
                     <button type="button" className="signinbtn placebidbtn btn btn-secondary">PlaceBid</button>
 
             </div>
@@ -63,4 +63,4 @@ function Carinfo(props){
         </div>
     )
 }
-export default Carinfo
+export default props

@@ -7,7 +7,11 @@ import carContext from "../../utils/carContext";
 
 function Carcontainer(props){
     
-    const  carid  = useContext(carContext)
+    const setlocalstorage= (info)=>{
+        console.log(info)
+        const carinfo = JSON.stringify(info)
+        localStorage.setItem("carinfo", carinfo);
+    }
     
 
     const [time, setTime] = useState(
@@ -69,7 +73,7 @@ function Carcontainer(props){
             <p className="descriptiontext">{props.props.description}</p>
             <br></br>
              
-            <Link to="/cardetails"><a className="viewmorebtn"><button onClick={()=>{carid(props.props)}} type="button" class="detailsbtn btn btn-secondary">Details</button></a></Link>
+            <Link to="/cardetails"><a className="viewmorebtn"><button onClick={()=>{setlocalstorage(props.props)}} type="button" class="detailsbtn btn btn-secondary">Details</button></a></Link>
              
              <p className="locationtext">{props.props.location}</p>
             <div className="countdownbox"><FontAwesomeIcon icon="dollar-sign" /> {numberWithCommas(props.props.highest_bid)}<FontAwesomeIcon className="dollarsign"icon="clock"/> {time.days}d {time.hours}h {time.mins}m {time.seconds}s </div>
