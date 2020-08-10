@@ -3,7 +3,7 @@ import "./stylesheet.css"
 import moment, {duration} from 'moment'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { Link } from 'react-router-dom';
-import carContext from "../../utils/carContext";
+import NumberFormat from 'react-number-format';
 
 function Carcontainer(props){
     
@@ -50,10 +50,6 @@ function Carcontainer(props){
         
     }
     
-        const  numberWithCommas= (x) => {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
 
       useEffect(() => {
         const interval = setInterval(() => {
@@ -76,7 +72,7 @@ function Carcontainer(props){
             <Link to="/cardetails"><a className="viewmorebtn"><button onClick={()=>{setlocalstorage(props.props)}} type="button" class="detailsbtn btn btn-secondary">Details</button></a></Link>
              
              <p className="locationtext">{props.props.location}</p>
-            <div className="countdownbox"><FontAwesomeIcon icon="dollar-sign" /> {numberWithCommas(props.props.highest_bid)}<FontAwesomeIcon className="dollarsign"icon="clock"/> {time.days}d {time.hours}h {time.mins}m {time.seconds}s </div>
+            <div className="countdownbox"><FontAwesomeIcon icon="dollar-sign" /> <NumberFormat value={props.props.highest_bid} displayType={'text'} thousandSeparator={true}  /><FontAwesomeIcon className="dollarsign"icon="clock"/> {time.days}d {time.hours}h {time.mins}m {time.seconds}s </div>
             
             
          </div>
