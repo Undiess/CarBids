@@ -2,11 +2,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bidsSchema = new Schema({
-    bidder_id:{
+    bidderId:{
       type:String,
       required: true
     },
-    bid_amount:{
+    bidAmount:{
       type: Number,
       required:true
     }
@@ -76,7 +76,7 @@ const carSchema = new mongoose.Schema({
       type:Date,
       required:true
     },
-    highest_bids:{
+    highest_bid:{
       type:Number,
       required:true
     },
@@ -85,7 +85,7 @@ const carSchema = new mongoose.Schema({
       required:true
     },
     highest_bidderid:{
-      type:Number,
+      type:String,
       required:true
     },
     bids:[bidsSchema]

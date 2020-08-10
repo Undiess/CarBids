@@ -13,7 +13,14 @@ export default {
 
     postRegister: function(details){ 
       return axios.post("api/users/register",details)
-    }
+    },
     
+    placebid:function(details){
+      return axios.post("api/placebid", details)
+    },
+
+    getCarInfo: function(id){
+      return axios.get("/api/car/"+id);
+    }
   };
   
