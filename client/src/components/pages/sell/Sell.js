@@ -6,7 +6,11 @@ import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
 import subDays from "date-fns/subDays";
 import "./stylesheet.css"
+
 import API from "../../utils/API"
+
+
+
 
 function SellmyCar (){
 
@@ -14,7 +18,7 @@ function SellmyCar (){
         setHours(setMinutes(new Date(), 30), 16)
       );
 
-      const [state,setState]=useState({});
+     const [state,setState]=useState({});
 
       const onChange = e => {
         setState({...state,[e.target.id]: e.target.value });
@@ -32,6 +36,8 @@ function SellmyCar (){
         })
         
     }
+
+
 return(
 
     <div>
@@ -47,6 +53,7 @@ return(
             
             <legend><center><h2><b>Car Details</b></h2></center></legend><br/>
 
+
             <div className="form-group">
             <label className="col-md-4 control-label">Car Brand/Model</label>  
             <div className="col-md-4 inputGroupContainer">
@@ -56,14 +63,22 @@ return(
             </div>
             </div>
 
+            
+
+
             <div className="form-group">
             <label className="col-md-4 control-label">Registration Number</label>  
             <div className="col-md-4 inputGroupContainer">
             <div className="input-group">
+
             <input  onChange={onChange} id="rego" placeholder="Registration Number" className="form-control"  type="text"/>
+
+            <input  name="rego" placeholder="Registration Number" className="form-control"  type="text"/>
+
             </div>
             </div>
             </div>
+
 
             <div className="form-group"> 
             <label className="col-md-4 control-label">State Registered </label>
@@ -84,12 +99,19 @@ return(
             </div>
             </div>
 
+            
+
+
             <div className="form-group">
             <label className="col-md-4 control-label" >Kilometers</label> 
             <div className="col-md-4 inputGroupContainer">
             <div className="input-group">
             <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+
             <input onChange={onChange} id="km" placeholder="Kilometers" className="form-control"  type="text"/>
+
+            <input name="km" placeholder="Kilometers" className="form-control"  type="text"/>
+
             </div>
             </div>
             </div>
@@ -99,7 +121,11 @@ return(
             <div className="col-md-4 selectContainer inputGroupContainer">
             <div className="input-group ">
                
+
             <select onChange={onChange} id="transmission" className="form-control selectpicker">
+
+            <select name="department" className="form-control selectpicker">
+ 
             <option value="">Select Transmission</option>
             <option>Automatic</option>
             <option>Manual</option>
@@ -120,6 +146,13 @@ return(
             <option>FWD </option>
             <option>4WD )</option>
             <option>AWD </option>
+
+            <select name="department" className="form-control selectpicker">
+            <option value="">Select Drive Train</option>
+            <option>RWD (Rear Wheel Drive)</option>
+            <option>FWD (Front Wheel Drive)</option>
+            <option>4WD (4 Wheel Drive)</option>
+            <option>AWD (All Wheel Drive)</option>
             </select>
             </div>
             </div>
@@ -136,6 +169,8 @@ return(
             <div className="input-group">
             <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
             <input onChange={onChange} id="Engine" placeholder="Engine" className="form-control"  type="text"/>
+
+            <input name="Engine" placeholder="Engine" className="form-control"  type="text"/>
             </div>
             </div>
             </div>
@@ -146,7 +181,10 @@ return(
             <div className="col-md-4 inputGroupContainer">
             <div className="input-group">
           
+ 
             <input onChange={onChange} id="URL" placeholder="Image URL" className="form-control"  type="text"/>
+
+            <input  name="URL" placeholder="Image URL" className="form-control"  type="text"/>
             </div>
             </div>
             </div>
@@ -167,8 +205,11 @@ return(
             <div className="col-md-4 selectContainer inputGroupContainer">
             <div className="input-group ">
                
+
             <select onChange={onChange} id="Body" className="form-control selectpicker">
-            <option value="">Select Body Type</option>
+
+            <select name="department" className="form-control selectpicker">
+-         <option value="">Select Body Type</option>
             <option>Hatchback</option>
             <option>Sedan</option>
             <option>SUV</option>
@@ -197,7 +238,11 @@ return(
             <div className="col-md-4 inputGroupContainer">
             <div className="input-group">
             <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+
             <input onChange={onChange} id="minprice" placeholder="Price" className="form-control"  type="text"/>
+
+            <input name="minprice" placeholder="Price" className="form-control"  type="text"/>
+
             </div>
             </div>
             </div>
@@ -207,21 +252,32 @@ return(
                 <div> Short Description (max 120 characters)</div>
                 <div className=" col-md-6 control-label inputGroupContainer">
                 
+
                 <textarea onChange={onChange} id="description"className="form-control" maxlength= "120"aria-label="With textarea"></textarea>
+
+                <textarea className="form-control" maxlength= "120"aria-label="With textarea"></textarea>
+
                 </div>
             </div>
 
             <div className="form-group">
                 <div> Car Overview</div>
                 <div className=" col-md-6 control-label inputGroupContainer">
-                
+
                 <textarea onChange={onChange} id="overview"className="form-control " aria-label="With textarea"></textarea>
                 </div>
             </div>
 
             <div className="btncontainersell">  <button onClick={submit}className="sellcarbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Submit</button></div>
           
-        
+
+                <textarea className="form-control " aria-label="With textarea"></textarea>
+                </div>
+            </div>
+
+    
+           
+    
             </div>
             </div>
 )
