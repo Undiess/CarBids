@@ -60,4 +60,9 @@
 .footerbc{ 
     background-color: #371F54;
     color: white;
+    height: 2px;
+}
+
+.page-footer{
+    margin-top: 15%;
 }
