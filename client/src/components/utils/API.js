@@ -21,6 +21,16 @@ export default {
 
     getCarInfo: function(id){
       return axios.get("/api/car/"+id);
+
+    },
+    regoInfo:function(data){
+      return axios.post("/api/regoinfo", data)
+    },
+    
+    postinfo:function(data){
+      return axios.post("/api/postcar",data)
+
+
     }
   };
   

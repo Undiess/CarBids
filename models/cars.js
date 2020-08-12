@@ -26,6 +26,21 @@ const carSchema = new mongoose.Schema({
     },
     seller_name:{
       type:String,
+
+      
+    },
+    brand:{
+      type:String,
+      
+    },
+    model:{
+      type:String,
+      
+    },
+    vin:{
+      type:String,
+      
+
       required:true
     },
     brand:{
@@ -39,6 +54,7 @@ const carSchema = new mongoose.Schema({
     vin:{
       type:String,
       required:true
+
     },
     imgURL:{
       type:String,
@@ -62,7 +78,11 @@ const carSchema = new mongoose.Schema({
     },
     color:{
       type:String,
+
+      
+
       required:true
+
     },
     location:{
       type:String,
@@ -70,7 +90,11 @@ const carSchema = new mongoose.Schema({
     },
     seller_type:{
       type:String,
+
+    
+
       required:true
+
     },
     ending_time:{
       type:Date,
@@ -82,11 +106,19 @@ const carSchema = new mongoose.Schema({
     },
     num_bids:{
       type:Number,
+
+      
+    },
+    highest_bidderid:{
+      type:String,
+      
+
       required:true
     },
     highest_bidderid:{
       type:String,
       required:true
+
     },
     bids:[bidsSchema]
   });
