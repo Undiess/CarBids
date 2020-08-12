@@ -7,6 +7,9 @@ const apiRoutes = require("./routes/api");
 const passport = require("passport");
 const users = require("./routes/users");
 
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'))
+}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -33,9 +36,6 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('client/build'))
-}
 
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
