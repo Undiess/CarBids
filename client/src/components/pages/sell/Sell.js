@@ -5,7 +5,7 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
 import subDays from "date-fns/subDays";
-import "./style.css"
+import "./stylesheet.css"
 
 
 function SellmyCar (){
@@ -17,8 +17,8 @@ function SellmyCar (){
 return(
 
     <div>
-        <div className="imgdiv" > <img classNameName="backgroundgtr"src={background}></img></div>
-        <div> <h3 classNameName="sellmycartxt">SELL YOUR CAR</h3></div>
+        <div className="imgdiv" > <img className="backgroundgtr"src={background}></img></div>
+        <div> <h3 className="sellmycartxt">SELL YOUR CAR</h3></div>
         
 
         <div className="container carsellinfo">
@@ -140,7 +140,7 @@ return(
         <div>Ending Date/Time</div>
         <br/>
          <DatePicker 
-                classNameName ="datetime"
+                className ="datetime"
                 selected={startDate}
                 onChange={date => setStartDate(date)}
                 showTimeSelect
