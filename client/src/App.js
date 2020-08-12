@@ -11,7 +11,7 @@ import SignIn from "./components/pages/signIn/signin"
 import SignUp from './components/pages/signIn/signup';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./components/utils/setAuthToken";
-
+import Footer from "./components/navbar/footer"
 
 
 function App() {
@@ -64,6 +64,7 @@ function App() {
            
             <Route exact path="/signin" component={SignIn}/>
             <Route exact path="/signup" component={SignUp}/>
+            <Footer/>
         </div>
         </carContext.Provider>
         </loggedContext.Provider>

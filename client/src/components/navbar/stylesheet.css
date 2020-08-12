@@ -53,6 +53,11 @@
 }
 
 .signouticon:hover{
-    background-color: green;
+    background-color: #371F54;
 
+}
+
+.footerbc{ 
+    background-color: #371F54;
+    color: white;
 }
