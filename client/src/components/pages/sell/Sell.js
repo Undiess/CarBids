@@ -73,7 +73,7 @@ return(
 
             <input  onChange={onChange} id="rego" placeholder="Registration Number" className="form-control"  type="text"/>
 
-            <input  name="rego" placeholder="Registration Number" className="form-control"  type="text"/>
+      
 
             </div>
             </div>
@@ -110,7 +110,7 @@ return(
 
             <input onChange={onChange} id="km" placeholder="Kilometers" className="form-control"  type="text"/>
 
-            <input name="km" placeholder="Kilometers" className="form-control"  type="text"/>
+        
 
             </div>
             </div>
@@ -120,17 +120,15 @@ return(
             <label className="col-md-4 control-label">Transmission </label>
             <div className="col-md-4 selectContainer inputGroupContainer">
             <div className="input-group ">
-               
-
             <select onChange={onChange} id="transmission" className="form-control selectpicker">
 
-            <select name="department" className="form-control selectpicker">
+        
  
             <option value="">Select Transmission</option>
             <option>Automatic</option>
             <option>Manual</option>
-           
-            </select>
+           </select>
+          
             </div>
             </div>
             </div>
@@ -144,15 +142,8 @@ return(
             <option value="">Select Drive Train</option>
             <option>RWD </option>
             <option>FWD </option>
-            <option>4WD )</option>
+            <option>4WD </option>
             <option>AWD </option>
-
-            <select name="department" className="form-control selectpicker">
-            <option value="">Select Drive Train</option>
-            <option>RWD (Rear Wheel Drive)</option>
-            <option>FWD (Front Wheel Drive)</option>
-            <option>4WD (4 Wheel Drive)</option>
-            <option>AWD (All Wheel Drive)</option>
             </select>
             </div>
             </div>
@@ -167,10 +158,10 @@ return(
             <label className="col-md-4 control-label" >Engine</label> 
             <div className="col-md-4 inputGroupContainer">
             <div className="input-group">
-            <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+           
             <input onChange={onChange} id="Engine" placeholder="Engine" className="form-control"  type="text"/>
 
-            <input name="Engine" placeholder="Engine" className="form-control"  type="text"/>
+        
             </div>
             </div>
             </div>
@@ -184,7 +175,7 @@ return(
  
             <input onChange={onChange} id="URL" placeholder="Image URL" className="form-control"  type="text"/>
 
-            <input  name="URL" placeholder="Image URL" className="form-control"  type="text"/>
+        
             </div>
             </div>
             </div>
@@ -208,7 +199,7 @@ return(
 
             <select onChange={onChange} id="Body" className="form-control selectpicker">
 
-            <select name="department" className="form-control selectpicker">
+            
 -         <option value="">Select Body Type</option>
             <option>Hatchback</option>
             <option>Sedan</option>
@@ -216,6 +207,7 @@ return(
             <option>Coupe</option>
             <option>Convertible</option>
             <option>Wagon</option>
+            
             </select>
             </div>
             </div>
@@ -237,11 +229,11 @@ return(
             <label className="col-md-4 control-label" >Minimum Price</label> 
             <div className="col-md-4 inputGroupContainer">
             <div className="input-group">
-            <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+       
 
             <input onChange={onChange} id="minprice" placeholder="Price" className="form-control"  type="text"/>
 
-            <input name="minprice" placeholder="Price" className="form-control"  type="text"/>
+       
 
             </div>
             </div>
@@ -255,7 +247,7 @@ return(
 
                 <textarea onChange={onChange} id="description"className="form-control" maxlength= "120"aria-label="With textarea"></textarea>
 
-                <textarea className="form-control" maxlength= "120"aria-label="With textarea"></textarea>
+             
 
                 </div>
             </div>
@@ -271,15 +263,15 @@ return(
             <div className="btncontainersell">  <button onClick={submit}className="sellcarbtn btn btn-outline-secondary my-2 my-sm-0" type="submit">Submit</button></div>
           
 
-                <textarea className="form-control " aria-label="With textarea"></textarea>
+            
                 </div>
             </div>
 
     
            
     
-            </div>
-            </div>
+           
+            
 )
            
 
