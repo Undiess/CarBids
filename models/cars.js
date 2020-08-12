@@ -8,7 +8,7 @@ const bidsSchema = new Schema({
     },
     bidAmount:{
       type: Number,
-      required:true
+      
     }
 })
 const carSchema = new mongoose.Schema({
@@ -18,11 +18,11 @@ const carSchema = new mongoose.Schema({
     },
     description:{
       type:String,
-      required:true
+      
     },
     overview:{
       type:String,
-      required:true
+      
     },
     seller_name:{
       type:String,
@@ -41,68 +41,67 @@ const carSchema = new mongoose.Schema({
       type:String,
       
 
-      required:true
-    },
-    brand:{
-      type:String,
-      required:true
-    },
+      
+    }
+    
+      
+    ,
     model:{
       type:String,
-      required:true
+    
     },
     vin:{
       type:String,
-      required:true
+      
 
     },
     imgURL:{
       type:String,
-      required:true
+      
     },
     kilometers:{
       type:Number,
-      required:true
+      
     },
     engine:{
       type:String,
-      required:true
+      
     },
     drivetrain:{
       type:String,
-      required:true
+      
     },
     transmission:{
       type:String,
-      required:true
+      
     },
     color:{
       type:String,
 
       
 
-      required:true
+      
 
     },
     location:{
       type:String,
-      required:true
+      
     },
     seller_type:{
       type:String,
 
     
 
-      required:true
+      
 
     },
     ending_time:{
       type:Date,
-      required:true
+      
     },
     highest_bid:{
       type:Number,
-      required:true
+      
     },
     num_bids:{
       type:Number,
@@ -113,11 +112,11 @@ const carSchema = new mongoose.Schema({
       type:String,
       
 
-      required:true
+      
     },
     highest_bidderid:{
       type:String,
-      required:true
+      
 
     },
     bids:[bidsSchema]
