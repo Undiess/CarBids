@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Undiess/CarBids#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "is-empty": "^1.2.0",

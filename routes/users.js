@@ -17,11 +17,11 @@ router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   // Check validation
     if (!isValid) {
-      return res.status(400).json(errors);
+      return res.status(203).json(errors);
     }
   User.findOne({ email: req.body.email }).then(user => {
       if (user) {
-        return res.status(400).json({ email: "Email already exists" });
+        return res.status(203).json({ email: "Email already exists" });
       } else {
         const newUser = new User({
           name: req.body.name,
@@ -51,7 +51,7 @@ router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
   // Check validation
     if (!isValid) {
-      return res.status(400).json(errors);
+      return res.status(203).json(errors);
     }
   const email = req.body.email;
     const password = req.body.password;
@@ -59,7 +59,7 @@ router.post("/login", (req, res) => {
     User.findOne({ email }).then(user => {
       // Check if user exists
       if (!user) {
-        return res.status(404).json({ emailnotfound: "Email not found" });
+        return res.status(203).json({ emailnotfound: "Email not found" });
       }
   // Check password
       bcrypt.compare(password, user.password).then(isMatch => {
@@ -86,7 +86,7 @@ router.post("/login", (req, res) => {
           );
         } else {
           return res
-            .status(400)
+            .status(203)
             .json({ passwordincorrect: "Password incorrect" });
         }
       });
