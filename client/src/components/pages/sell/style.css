@@ -1,0 +1,33 @@
+.backgroundgtr{
+    width: 100%;
+}
+.sellmycartxt{
+    padding-top: 13px;
+    font-family:Verdana, sans-serif ;
+    font-weight: 900;
+    font-size: xx-large;
+    color: midnightblue;
+}
+
+.carsellinfo{
+    border: solid grey 1.5px;
+    background-color: white;
+    width: 50%;
+    box-shadow: 1px 1px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.inputGroupContainer{
+    margin:auto;
+}
+.datetime{
+    border-radius: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border: 1px rgb(172, 167, 167) solid;
+    margin-bottom: 7%;
+}
+
