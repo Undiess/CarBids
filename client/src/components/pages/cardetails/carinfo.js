@@ -17,6 +17,7 @@ function Carinfo(props){
     const [state,setState] = useState({})
     const [loggedin,setLogin] = useContext(loggedContext);
 
+    
     const placebid=()=>{
         if (state.bid <= props.props.highest_bid){
             setState({"valid":"false"})
@@ -127,9 +128,10 @@ function Carinfo(props){
                             <p>{props.props.overview}</p>
                             </div>
                            
-                            <div class="col">
-                                <p>{time.days}d {time.hours}h {time.mins}m {time.seconds}s</p>
-                               <h4>Highest Bid: {props.props.highest_bid}</h4>
+                            <div class="col bidscontainer">
+                                <h4>Highest Bid: {props.props.highest_bid}</h4>
+                                <p> Time remaining: {time.days}d {time.hours}h {time.mins}m {time.seconds}s</p>
+
                                {state.valid === "false" ? (
                                 <p className="biderror">please enter a higher number</p>
                                 ) : (
@@ -138,6 +140,12 @@ function Carinfo(props){
                                 <input type="number" id="bid" onChange={onChange} placeholder={props.props.highest_bid} min={props.props.highest_bid} ></input>
                             
                                 <button type="button" onClick={placebid} className="signinbtn placebidbtn btn btn-secondary">PlaceBid</button>
+                                {props.props.highest_bidderid === loggedin.id ? (
+                                <h5 className="highestbiddertxt">You are the highest bidder</h5>
+                                ) : (
+                                <div></div>
+                                )} 
+                                
                             </div>
                         </div>
                     </div>

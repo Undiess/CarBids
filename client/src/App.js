@@ -12,7 +12,7 @@ import SignUp from './components/pages/signIn/signup';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./components/utils/setAuthToken";
 import Footer from "./components/navbar/footer"
-
+import Sell from "./components/pages/sell/Sell"
 
 function App() {
   const [loggedin,setLogin]= useState({
@@ -64,6 +64,7 @@ function App() {
            
             <Route exact path="/signin" component={SignIn}/>
             <Route exact path="/signup" component={SignUp}/>
+            <Route exact path="/sellmycar" component={Sell}/>
             <Footer/>
         </div>
         </carContext.Provider>

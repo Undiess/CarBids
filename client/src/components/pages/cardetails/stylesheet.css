@@ -74,3 +74,25 @@ margin-left: 0px;
 .detailsrow{
     padding-top: 3%;
 }
+
+.bidscontainer{
+    background-color:#371F54 ;
+    color: white;
+    border-radius: 20px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+
+}
+
+.placebidbtn{
+    background-color: white;
+    color: black;
+   
+}
+#bid{
+    border: white 2px solid;
+    margin-top: 3px;
+}
+.highestbiddertxt{
+    color:gold ;
+}

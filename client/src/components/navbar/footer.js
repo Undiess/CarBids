@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom";
 
 function Footer(){
 return(
@@ -30,13 +31,13 @@ return(
       <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
 
      
-        <h6 className="text-uppercase font-weight-bold">home</h6>
+        <Link to="/"><h6 className="text-uppercase linkfooter font-weight-bold">home</h6></Link>
         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
       </div>
   
       <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
 
-        <h6 className="text-uppercase font-weight-bold">Sell My Car</h6>
+      <Link to="/"><h6 className="text-uppercase linkfooter font-weight-bold">Sell My Car</h6></Link>
         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
     
 
@@ -47,7 +48,7 @@ return(
       <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-2">
 
        
-        <h6 className="text-uppercase font-weight-bold">About CarBids</h6>
+      <Link to="/"><h6 className="text-uppercase linkfooter font-weight-bold">About CarBids</h6></Link>
         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"style= {{width: "60px;"}}/>
 
 

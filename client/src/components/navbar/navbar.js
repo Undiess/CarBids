@@ -35,7 +35,7 @@ function Navbar(){
             <Link to="/"> <a className="nav-link" href="#">Auctions<span className="sr-only">(current)</span></a></Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Sell My Car</a>
+              <Link to="/sellmycar"><a className="nav-link" href="#">Sell My Car</a> </Link>
             </li>
          
             <li className="nav-item">

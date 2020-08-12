@@ -37,7 +37,7 @@ router.post("/placebid", (req,res)=>{
 
   
 
-  db.Cars.findByIdAndUpdate({_id:body.carId}, {highest_bidderid:body},function(err, result) {
+  db.Cars.findByIdAndUpdate({_id:body.carId}, {highest_bidderid:body.buyerId},function(err, result) {
     if (err) {
       res.send(err);
     } else {
