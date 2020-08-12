@@ -33,7 +33,9 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 
-
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'))
+}
 
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
