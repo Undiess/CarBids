@@ -7,6 +7,7 @@ const apiRoutes = require("./routes/api");
 const passport = require("passport");
 const users = require("./routes/users");
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -31,6 +32,7 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 // Routes
+
 
 
 // console.log that your server is up and running
